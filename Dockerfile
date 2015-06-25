@@ -1,8 +1,9 @@
 ## Dockerfile for jshint
-FROM nubs/npm-onbuild:latest
+FROM leanlabs/npm-builder:latest
 MAINTAINER Hyzual "hyzual@gmail.com"
 
-USER build
+RUN npm install -g jshint@^2.8.0 \
+    && mkdir -p /lint
 
-ENTRYPOINT ["/code/node_modules/.bin/jshint"]
-WORKDIR /code/lint
+ENTRYPOINT ["/usr/bin/jshint"]
+WORKDIR /lint

@@ -1,17 +1,19 @@
 # docker-jshint
 
+[![](https://badge.imagelayers.io/hyzual/jshint:latest.svg)](https://imagelayers.io/?images=hyzual/jshint:latest 'Get your own badge on imagelayers.io')
+
 A Dockerfile for the [JSHint][jshint] Javascript linter.
 
 Use the following command to run it :
 
 ```bash
-sudo docker run --rm -it -v $(pwd):/code/lint hyzual/jshint
+sudo docker run --rm -it -v $(pwd):/lint hyzual/jshint path/to/folder/to/lint
 ```
 
-It expects the code to lint to be in the `/code/lint` folder. You can pass [jshint CLI arguments][jshint-cli-options] directly to the container, e.g.
+It expects the code to lint to be in the `/lint` folder. You can pass [jshint CLI arguments][jshint-cli-options] directly to the container, e.g.
 
 ```bash
-sudo docker run --rm -it -v $(pwd):/code/lint hyzual/jshint --verbose
+sudo docker run --rm -it -v $(pwd):/lint hyzual/jshint path/to/folder/to/lint --verbose
 ```
 
 ## JSHint
